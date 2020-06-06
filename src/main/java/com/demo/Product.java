@@ -1,6 +1,6 @@
 package com.demo;
 
-public class Product {
+public class Product implements ProductBehavior {
 
     private Integer sellIn;
 
@@ -14,7 +14,7 @@ public class Product {
         this.quality = quality;
     }
 
-
+    @Override
     public void update() {
         this.sellIn = this.sellIn - 1;
         if (this.sellIn < 0) {

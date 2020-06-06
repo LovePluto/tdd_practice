@@ -1,6 +1,6 @@
 package com.demo;
 
-public class BackstagePass extends Product {
+public class BackstagePass extends Product implements ProductBehavior {
 
     public BackstagePass(Integer sellIn, Integer quality) {
         super(sellIn, quality);
