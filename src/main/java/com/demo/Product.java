@@ -34,4 +34,12 @@ public class Product {
     public Integer getQuality() {
         return quality;
     }
+
+    protected void setSellIn(Integer sellIn) {
+        this.sellIn = sellIn;
+    }
+
+    protected void setQuality(Integer quality) {
+        this.quality = quality;
+    }
 }

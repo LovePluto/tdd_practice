@@ -15,4 +15,43 @@ public class BackstagePassTest {
         assertThat(backstagePass.getQuality(),is(10));
     }
 
+    @Test
+    public void when_backstage_pass_update_then_quality_add_1_and_sellIn_reduce_1(){
+        BackstagePass backstagePass = new BackstagePass(20,20);
+
+        backstagePass.update();
+
+        assertThat(backstagePass.getSellIn(),is(19));
+        assertThat(backstagePass.getQuality(),is(21));
+    }
+
+    @Test
+    public void when_backstage_pass_sellIn_is_10_then_quality_add_2(){
+        BackstagePass backstagePass = new BackstagePass(10,20);
+
+        backstagePass.update();
+
+        assertThat(backstagePass.getSellIn(),is(9));
+        assertThat(backstagePass.getQuality(),is(22));
+    }
+
+    @Test
+    public void when_backstage_pass_sellIn_is_5_then_quality_add_3(){
+        BackstagePass backstagePass = new BackstagePass(5,20);
+
+        backstagePass.update();
+
+        assertThat(backstagePass.getSellIn(),is(4));
+        assertThat(backstagePass.getQuality(),is(23));
+    }
+
+    @Test
+    public void when_backstage_pass_sellIn_is_0_then_quality_is_0(){
+        BackstagePass backstagePass = new BackstagePass(0,20);
+
+        backstagePass.update();
+
+        assertThat(backstagePass.getSellIn(),is(-1));
+        assertThat(backstagePass.getQuality(),is(0));
+    }
 }
